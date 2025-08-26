@@ -38,7 +38,9 @@ logger = logging.getLogger(__name__)
 
 # Конфигурация
 try:
-    from config import API_CONFIG, BOT_TOKEN, CHANNEL_LINK, CHANNEL_ID
+    from config import API_CONFIG, BOT_TOKENS, CHANNEL_LINK, CHANNEL_ID, ADMIN_ID
+    BOT_TOKEN = BOT_TOKENS["melbet"]
+    ADMIN_BOT_TOKEN = BOT_TOKENS["admin"]
 except ImportError:
     # Fallback значения если config.py не найден
     API_CONFIG = {
@@ -47,7 +49,7 @@ except ImportError:
     }
     BOT_TOKEN = "8412633556:AAG2UiKwZsoQZRR1_k1vy3cmrGeqjnEN5ls"
     ADMIN_BOT_TOKEN = "8439194478:AAHF1VVycOeEan9HomdozJ9QfFLtglsjy_I"
-    ADMIN_ID = 6826609528  # ID главного админа
+    ADMIN_ID = 5474111297  # ID главного админа
     CHANNEL_LINK = "https://t.me/luxkassa"
     CHANNEL_ID = "luxkas melbet"
 

@@ -31,11 +31,12 @@ logger = logging.getLogger(__name__)
 
 # Конфигурация
 try:
-    from config import ADMIN_BOT_TOKEN, ADMIN_ID, API_SETTINGS
+    from config import BOT_TOKENS, ADMIN_ID, API_SETTINGS
+    ADMIN_BOT_TOKEN = BOT_TOKENS["admin"]
 except ImportError:
     # Fallback значения если config.py не найден
     ADMIN_BOT_TOKEN = "8439194478:AAHF1VVycOeEan9HomdozJ9QfFLtglsjy_I"
-    ADMIN_ID = 6826609528
+    ADMIN_ID = 5474111297
     API_SETTINGS = {}
 
 # Инициализация бота и диспетчера

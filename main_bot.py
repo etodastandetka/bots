@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 
 # Конфигурация
 try:
-    from config import BOT_TOKEN, CHANNEL_LINK
+    from config import BOT_TOKENS, CHANNEL_LINK
+    BOT_TOKEN = BOT_TOKENS["main"]
 except ImportError:
     BOT_TOKEN = "8206205994:AAE00qmtzbMQbQJRzuwKLeTkAbKf8ZNtC0Q"
     CHANNEL_LINK = "https://t.me/luxkassa_news"
