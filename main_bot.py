@@ -18,6 +18,10 @@ try:
 except ImportError:
     BOT_TOKEN = "8206205994:AAE00qmtzbMQbQJRzuwKLeTkAbKf8ZNtC0Q"
     CHANNEL_LINK = "https://t.me/luxkassa_news"
+except Exception as e:
+    print(f"Ошибка загрузки конфигурации: {e}")
+    BOT_TOKEN = "8206205994:AAE00qmtzbMQbQJRzuwKLeTkAbKf8ZNtC0Q"
+    CHANNEL_LINK = "https://t.me/luxkassa_news"
 
 # Инициализация
 bot = Bot(token=BOT_TOKEN)
