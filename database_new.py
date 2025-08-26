@@ -135,6 +135,62 @@ class DatabaseNew:
                 }
             ]
         }
+    
+    def save_wallet(self, name: str, qr_hash: str, bank_code: str, recipient_name: str = None, amount: float = 0.0) -> int:
+        """Сохраняет кошелек в базу данных"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            cursor.execute('''
+                INSERT INTO wallets (name, bank, qr_hash, amount)
+                VALUES (?, ?, ?, ?)
+            ''', (name, bank_code, qr_hash, amount))
+            wallet_id = cursor.lastrowid
+            conn.commit()
+            conn.close()
+            logger.info(f"Кошелек {name} сохранен с ID {wallet_id}")
+            return wallet_id
+        except Exception as e:
+            logger.error(f"Ошибка сохранения кошелька: {e}")
+            return 0
+    
+    def get_all_wallets(self) -> List[Dict[str, Any]]:
+        """Получает все кошельки"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            cursor.execute('SELECT id, name, bank, qr_hash, amount, is_active FROM wallets')
+            rows = cursor.fetchall()
+            conn.close()
+            
+            wallets = []
+            for row in rows:
+                wallets.append({
+                    'id': row[0],
+                    'name': row[1],
+                    'bank': row[2],
+                    'qr_hash': row[3],
+                    'amount': row[4],
+                    'is_active': row[5]
+                })
+            return wallets
+        except Exception as e:
+            logger.error(f"Ошибка получения кошельков: {e}")
+            return []
+    
+    def set_wallet_active(self, wallet_id: int, is_active: bool) -> bool:
+        """Устанавливает активность кошелька"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            cursor.execute('UPDATE wallets SET is_active = ? WHERE id = ?', (is_active, wallet_id))
+            conn.commit()
+            conn.close()
+            logger.info(f"Кошелек {wallet_id} установлен как {'активный' if is_active else 'неактивный'}")
+            return True
+        except Exception as e:
+            logger.error(f"Ошибка установки активности кошелька: {e}")
+            return False
 
 # Создаем экземпляр базы данных
 db_new = DatabaseNew()
