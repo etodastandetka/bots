@@ -101,7 +101,7 @@ def get_main_admin_username():
             SELECT username FROM admins 
             WHERE is_main_admin = TRUE 
             LIMIT 1
-        '''
+        ''')
         admin = cursor.fetchone()
         conn.close()
         
