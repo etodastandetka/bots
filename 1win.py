@@ -396,20 +396,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Конфигурация
-try:
-    from config import API_CONFIG, BOT_TOKEN, CHANNEL_LINK, CHANNEL_ID
-except ImportError:
-    # Fallback значения если config.py не найден
-    API_CONFIG = {
-        "api_key": "d6ad6a2a6a578d10a47d475eb8475ed60337d96e8b3d157d285ce3328320de76",  # API ключ 1xBet
-        "deposits_blocked": False  # Разрешаем пополнения для 1xBet
-    }
-    BOT_TOKEN = "8450932679:AAGIN_eAHAUDlY-pgv41DnLZCH98L-EBgcI"
-    ADMIN_BOT_TOKEN = "7846228868:AAHTNEJr3YWJmD03AhXKTRD9nsQ-Y69YXeo"
-    ADMIN_ID = 6826609528  # ID главного админа
-    CHANNEL_LINK = "https://t.me/luxkassa"
-    CHANNEL_ID = "luxkas 1xbet"
+# Конфигурация (удален дублирующий блок)
 
 # Инициализация бота и диспетчера
 bot = Bot(token=BOT_TOKEN)
