@@ -63,8 +63,8 @@ dp = Dispatcher(storage=storage)
 db = None
 
 # Название бота для отображения в заявках
-BOT_NAME = "1xbet"  # Изменено на 1xbet
-BOT_SOURCE = "1xbet"  # Идентификатор бота для API
+BOT_NAME = "mostbet"  # Изменено на mostbet
+BOT_SOURCE = "mostbet"  # Идентификатор бота для API
 API_TOKEN = "kingsman_api_token_2024"  # Токен для API
 
 # Переменные для управления паузой бота
@@ -72,8 +72,8 @@ BOT_PAUSED = False
 PAUSE_MESSAGE = "Бот временно отключен"
 
 # Конфигурация групп для заявок
-WITHDRAWAL_GROUP_ID = -4959080180  # Группа для заявок на вывод 1XBET
-DEPOSIT_GROUP_ID = -4790118427     # Группа для заявок на пополнение 1XBET
+WITHDRAWAL_GROUP_ID = -4964398270  # Группа для заявок на вывод MOSTBET
+DEPOSIT_GROUP_ID = -4851374407     # Группа для заявок на пополнение MOSTBET
 
 # Конфигурация банков для кнопок
 BANKS = {
