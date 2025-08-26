@@ -987,7 +987,7 @@ async def main():
     
     # Создаем базу данных если её нет
     try:
-        db_new.init_db()
+        db_new.init_database()
         logger.info("✅ База данных инициализирована")
     except Exception as e:
         logger.error(f"❌ Ошибка инициализации базы данных: {e}")
