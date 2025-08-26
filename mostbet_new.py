@@ -45,11 +45,11 @@ except ImportError:
         "api_key": "d6ad6a2a6a578d10a47d475eb8475ed60337d96e8b3d157d285ce3328320de76",  # API ключ 1xBet
         "deposits_blocked": False  # Разрешаем пополнения для 1xBet
     }
-    BOT_TOKEN = "8252883654:AAG9JLRvragg6ATfYENDKtR1kvy_K5Si5pI"
-    ADMIN_BOT_TOKEN = "7846228868:AAHTNEJr3YWJmD03AhXKTRD9nsQ-Y69YXeo"
-    ADMIN_ID = 6826609528  # ID главного админа
+    BOT_TOKEN = "8331138773:AAH3OJbb7HVjH_dcSCJaaMNdPuMsHC0zYto"
+    ADMIN_BOT_TOKEN = "8439194478:AAHF1VVycOeEan9HomdozJ9QfFLtglsjy_I"
+    ADMIN_ID = 5474111297  # ID главного админа
     CHANNEL_LINK = "https://t.me/luxkassa"
-    CHANNEL_ID = "luxkas 1xbet"
+    CHANNEL_ID = "luxkas mostbet"
 
 # Инициализация бота и диспетчера
 bot = Bot(token=BOT_TOKEN)
